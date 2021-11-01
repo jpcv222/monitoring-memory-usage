@@ -12,8 +12,7 @@ IF [%1]==[] (
    set pname=%1
 )
 
-for /f "tokens=5" %%i in ('tasklist /fi "imagename eq %pname%" ^| findstr " K$"
-') do (
+for /f "tokens=5" %%i in ('tasklist /fi "imagename eq %pname%" ') do (
    set pmemuse=%%i
    REM eliminate the comma from the number
    set pmemuse=!pmemuse:,=!
